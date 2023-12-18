@@ -49,14 +49,13 @@ public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         if( m + n != 1){    //check to see if merging any empty vector
             int count = n-1;
-            //loop through each element in nums1 and compare to nums2
-            for( int i = m + n - 1; i > 0 && count >= 0; i-- ){
-                if( nums1[i] < nums2[count] ){
+            //add each element in nums2 to nums1
+            for( int i = m + n - 1; i >= 0 && count >= 0; i-- ){
+                if( nums1[i] == 0 ){
                     nums1[i] = nums2[count];
                     count--;
                 }
             }
-
 
             //bubble sort
             int temp;
